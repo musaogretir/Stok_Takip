@@ -6,15 +6,36 @@ using System.Threading.Tasks;
 
 namespace Stok_Takip
 {
-    internal class category
+    public class category
     {
+        public int categoryId { get; set; }
         public string categoryName { get; set; }
-        public category[] subCategories { get; set; }
+        public int parentId { get; set; }
+        public List<category> childCategories { get; set; }
 
-        public category(string name, category[] subCats)
+        public category(int CategoryId, string CategoryName, int ParentId, List<category> ChildCategories)
         {
-            this.categoryName = name;
-            this.subCategories = subCats;
+            categoryId = CategoryId;
+            categoryName = CategoryName;
+            parentId = ParentId;
+            childCategories = ChildCategories;
         }
+
+        public int getParentID() => parentId;
+
+        /*
+        public List<category> getChildCategories()
+        {
+            List<category> resultingCategories = new List<category>();
+
+            foreach (category c in this.childCategories)
+            {
+                    category childCategory = new category(c.categoryId, c.categoryName, c.parentId, new List<category>());
+                    resultingCategories.Add(childCategory);
+            }         
+            
+            return resultingCategories;
+        }
+        */
     }
 }
