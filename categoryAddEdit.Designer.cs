@@ -37,7 +37,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.listBox4 = new System.Windows.Forms.ListBox();
@@ -46,7 +45,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.listBox3 = new System.Windows.Forms.ListBox();
@@ -55,7 +53,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -158,7 +155,6 @@
             this.groupBox4.BackColor = System.Drawing.Color.LavenderBlush;
             this.groupBox4.Controls.Add(this.comboBox3);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Controls.Add(this.button12);
             this.groupBox4.Controls.Add(this.listBox4);
@@ -197,27 +193,17 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Kategori Adı :";
             // 
-            // button10
-            // 
-            this.button10.Enabled = false;
-            this.button10.Location = new System.Drawing.Point(201, 581);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(86, 31);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Sil";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // button11
             // 
             this.button11.Enabled = false;
             this.button11.Location = new System.Drawing.Point(13, 581);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(86, 31);
+            this.button11.Size = new System.Drawing.Size(274, 31);
             this.button11.TabIndex = 4;
             this.button11.Text = "Güncelle";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -266,7 +252,6 @@
             this.groupBox3.BackColor = System.Drawing.Color.LavenderBlush;
             this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.listBox3);
@@ -305,25 +290,13 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Kategori Adı :";
             // 
-            // button7
-            // 
-            this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(201, 581);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(86, 31);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Sil";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button8
             // 
             this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(13, 581);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(86, 31);
+            this.button8.Size = new System.Drawing.Size(274, 31);
             this.button8.TabIndex = 4;
             this.button8.Text = "Güncelle";
             this.button8.UseVisualStyleBackColor = true;
@@ -376,7 +349,6 @@
             this.groupBox5.BackColor = System.Drawing.Color.LavenderBlush;
             this.groupBox5.Controls.Add(this.comboBox1);
             this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.Controls.Add(this.button5);
             this.groupBox5.Controls.Add(this.button6);
             this.groupBox5.Controls.Add(this.listBox2);
@@ -415,25 +387,13 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Kategori Adı :";
             // 
-            // button4
-            // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(201, 581);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 31);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Sil";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // button5
             // 
             this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(13, 581);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 31);
+            this.button5.Size = new System.Drawing.Size(274, 31);
             this.button5.TabIndex = 4;
             this.button5.Text = "Güncelle";
             this.button5.UseVisualStyleBackColor = true;
@@ -610,7 +570,6 @@
         private GroupBox groupBox4;
         private ComboBox comboBox3;
         private Label label7;
-        private Button button10;
         private Button button11;
         private Button button12;
         private ListBox listBox4;
@@ -619,7 +578,6 @@
         private GroupBox groupBox3;
         private ComboBox comboBox2;
         private Label label5;
-        private Button button7;
         private Button button8;
         private Button button9;
         private ListBox listBox3;
@@ -628,7 +586,6 @@
         private GroupBox groupBox5;
         private ComboBox comboBox1;
         private Label label4;
-        private Button button4;
         private Button button5;
         private Button button6;
         private ListBox listBox2;

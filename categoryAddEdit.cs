@@ -45,6 +45,8 @@ namespace Stok_Takip
             comboBox3.DataSource = listBox3.Items;
         }
 
+
+
         #region Ana Kategori İşlemleri
         private void button1_Click(object sender, EventArgs e)
         {
@@ -110,7 +112,9 @@ namespace Stok_Takip
             }
         }
 
-        #endregion
+        #endregion Ana Kategori İşlemleri Bitiş
+
+
 
         #region Seviye 1 Kategori İşlemleri
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)//Seviye 1 kategori seçim
@@ -154,7 +158,14 @@ namespace Stok_Takip
 
                     int catID = Form1.kategoriler[index].categoryId;
 
-                    if (index > -1) Form1.kategoriler[index].childCategories.Add(new category(Form1.kategoriler[index].childCategories.Count, k1,catID,new List<category>()));
+                    if (index > -1) Form1.kategoriler[index]
+                                         .childCategories.Add(new category(
+                                                                            Form1.kategoriler[index].childCategories.Count, 
+                                                                            k1,
+                                                                            catID,
+                                                                            new List<category>()
+                                                                           )
+                                                             );
                 }
                 else
                 {
@@ -173,23 +184,38 @@ namespace Stok_Takip
         {
             if (listBox2.SelectedIndex > -1)
             {
-                button4.Enabled = button5.Enabled = true;
+                button5.Enabled = true;
             }
             else
             {
-                button4.Enabled = button5.Enabled = false;
+                button5.Enabled = false;
             }
         }
         private void button5_Click(object sender, EventArgs e)//Seviye 1 Güncelle Butonu
         {
+            if (listBox2.SelectedIndex > -1)
+            {
+                Form1.l = listBox2;
+                Form1.index = listBox2.SelectedIndex;
 
+                inputBox ib = new inputBox();
+                ib.yeniDeger.Text = listBox2.GetItemText(listBox2.SelectedItem);
+                ib.ShowDialog();
+
+                int mainCat = Form1.kategoriler
+                    .FindIndex(s => s.categoryName == comboBox1.GetItemText(comboBox1.SelectedItem));
+
+                Form1.kategoriler[mainCat]
+                    .childCategories[Form1.index]
+                    .categoryName = listBox2.GetItemText(listBox2.Items[Form1.index].ToString());
+                
+            }
         }
-        private void button4_Click(object sender, EventArgs e)//Seviye 1 Sil Butonu
-        {
 
-        }
+        #endregion Seviye 1 Bitiş
 
-        #endregion
+
+
 
         #region Seviye 2 Kategori İşlemleri
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)//Seviye 2 Kategori Seçimi
@@ -236,7 +262,9 @@ namespace Stok_Takip
 
                     int parentID=0, mainCAT=0, index = Form1.kategoriler.FindIndex(s => s.categoryName == secim1);
 
-                    int childCatIndex = Form1.kategoriler[index].childCategories.FindIndex(s => s.categoryName == secim2);
+                    int childCatIndex = Form1.kategoriler[index]
+                        .childCategories
+                        .FindIndex(s => s.categoryName == secim2);
 
                     foreach (category c1 in Form1.kategoriler)
                     {
@@ -246,7 +274,13 @@ namespace Stok_Takip
                             {
                                 mainCAT = c2.categoryId;
                                 parentID = c2.parentId;
-                                Form1.kategoriler[index].childCategories[childCatIndex].childCategories.Add(new category(Form1.kategoriler[index].childCategories.Count, k2, parentID, new List<category>()));
+                                Form1.kategoriler[index]
+                                    .childCategories[childCatIndex]
+                                    .childCategories
+                                    .Add(
+                                        new category(Form1.kategoriler[index]
+                                                          .childCategories.Count, k2, parentID, new List<category>())
+                                        );
                             }
                         }
                     }
@@ -265,24 +299,46 @@ namespace Stok_Takip
         }
         private void button8_Click(object sender, EventArgs e)//Seviye 2 Güncelle Butonu
         {
+            if (listBox3.SelectedIndex > -1)
+            {
+                Form1.l = listBox3;
+                Form1.index = listBox3.SelectedIndex;
 
-        }
-        private void button7_Click(object sender, EventArgs e)//Seviye 2 Sil Butonu
-        {
+                inputBox ib = new inputBox();
+                ib.yeniDeger.Text = listBox3.GetItemText(listBox3.SelectedItem);
+                ib.ShowDialog();
 
+                int mainCat = Form1.kategoriler
+                    .FindIndex(s => s.categoryName == comboBox1.GetItemText(comboBox1.SelectedItem));
+
+                int subCat = Form1.kategoriler[mainCat]
+                    .childCategories
+                    .FindIndex(s => s.categoryName == comboBox2.GetItemText(comboBox2.SelectedItem));
+
+                Form1.kategoriler[mainCat]
+                    .childCategories[subCat]
+                    .childCategories[Form1.index]
+                    .categoryName = listBox3.GetItemText(listBox3.Items[Form1.index].ToString());
+
+            }
         }
+
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox3.SelectedIndex > -1)
             {
-                button7.Enabled = button8.Enabled = true;
+                button8.Enabled = true;
             }
             else
             {
-                button7.Enabled = button8.Enabled = false;
+                button8.Enabled = false;
             }
         }
-        #endregion
+        #endregion Seviye 2 Bitiş
+
+
+
+
 
         #region Seviye 3 Kategori İşlemleri
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)//Seviye 3 Kategori Seçimi
@@ -331,9 +387,14 @@ namespace Stok_Takip
 
                 int parentID = 0, mainCAT = 0, index = Form1.kategoriler.FindIndex(s => s.categoryName == secim1);
 
-                int childCatIndex1 = Form1.kategoriler[index].childCategories.FindIndex(s => s.categoryName == secim2);
+                int childCatIndex1 = Form1.kategoriler[index]
+                    .childCategories
+                    .FindIndex(s => s.categoryName == secim2);
 
-                int childCatIndex2 = Form1.kategoriler[index].childCategories[childCatIndex1].childCategories.FindIndex(s => s.categoryName == secim3);
+                int childCatIndex2 = Form1.kategoriler[index]
+                    .childCategories[childCatIndex1]
+                    .childCategories
+                    .FindIndex(s => s.categoryName == secim3);
 
                 foreach (category c1 in Form1.kategoriler)
                 {
@@ -345,8 +406,14 @@ namespace Stok_Takip
                             {
                                 mainCAT = c3.categoryId;
                                 parentID = c3.parentId;
-                                Form1.kategoriler[index].childCategories[childCatIndex1].childCategories[childCatIndex2].childCategories.Add(
-                                    new category(Form1.kategoriler[index].childCategories.Count, k3, parentID, new List<category>()));
+                                Form1.kategoriler[index]
+                                    .childCategories[childCatIndex1]
+                                    .childCategories[childCatIndex2]
+                                    .childCategories
+                                    .Add(
+                                        new category(Form1.kategoriler[index]
+                                        .childCategories.Count, k3, parentID, new List<category>())
+                                        );
                             }
                         }
                     }
@@ -363,16 +430,47 @@ namespace Stok_Takip
         {
             if (listBox4.SelectedIndex > -1)
             {
-                button10.Enabled = button11.Enabled = true;
+                button11.Enabled = true;
             }
             else
             {
-                button10.Enabled = button11.Enabled = false;
+                button11.Enabled = false;
             }
         }
 
+        private void button11_Click(object sender, EventArgs e)//Seviye 3 Güncelle Butonu
+        {
+            if (listBox4.SelectedIndex > -1)
+            {
+                Form1.l = listBox4;
+                Form1.index = listBox4.SelectedIndex;
 
-        #endregion
+                inputBox ib = new inputBox();
+                ib.yeniDeger.Text = listBox3.GetItemText(listBox4.SelectedItem);
+                ib.ShowDialog();
+
+                int mainCat = Form1.kategoriler
+                    .FindIndex(s => s.categoryName == comboBox1.GetItemText(comboBox1.SelectedItem));
+
+                int subCat1 = Form1.kategoriler[mainCat]
+                    .childCategories
+                    .FindIndex(s => s.categoryName == comboBox2.GetItemText(comboBox2.SelectedItem));
+
+                int subCat2 = Form1.kategoriler[mainCat]
+                    .childCategories[subCat1]
+                    .childCategories
+                    .FindIndex(s => s.categoryName == comboBox3.GetItemText(comboBox3.SelectedItem));
+                
+                Form1.kategoriler[mainCat]
+                    .childCategories[subCat1]
+                    .childCategories[subCat2]
+                    .childCategories[Form1.index]
+                    .categoryName = listBox4.GetItemText(listBox4.Items[Form1.index].ToString());
+
+            }
+        }
+
+        #endregion Seviye 3 Bitiş
 
         private void button14_Click(object sender, EventArgs e)//Değişiklikleri kaydet
         {
@@ -381,5 +479,7 @@ namespace Stok_Takip
 
             MessageBox.Show("Değişiklikler kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        
     }
 }

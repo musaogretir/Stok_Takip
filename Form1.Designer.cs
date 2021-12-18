@@ -98,14 +98,16 @@
             // stokEkleDuzenle
             // 
             this.stokEkleDuzenle.Name = "stokEkleDuzenle";
-            this.stokEkleDuzenle.Size = new System.Drawing.Size(220, 26);
+            this.stokEkleDuzenle.Size = new System.Drawing.Size(224, 26);
             this.stokEkleDuzenle.Text = "Stok Ekle / Düzenle";
+            this.stokEkleDuzenle.Click += new System.EventHandler(this.stokEkleDuzenle_Click);
             // 
             // stokListesi
             // 
             this.stokListesi.Name = "stokListesi";
-            this.stokListesi.Size = new System.Drawing.Size(220, 26);
+            this.stokListesi.Size = new System.Drawing.Size(224, 26);
             this.stokListesi.Text = "Stok Listesi";
+            this.stokListesi.Click += new System.EventHandler(this.stokListesi_Click);
             // 
             // hakkinda
             // 
