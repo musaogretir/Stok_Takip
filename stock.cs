@@ -11,7 +11,6 @@ namespace Stok_Takip
         public category stockCategory { get; set; }
         public string stockName { get; set;}
         public string stockBrand { get; set;}
-        public string stockBarcodeNo { get; set;}
         public int stockAmount { get; set;}
         public DateTime stockDate { get; set;}
 
