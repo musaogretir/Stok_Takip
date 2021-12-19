@@ -12,13 +12,15 @@ namespace Stok_Takip
         public string categoryName { get; set; }
         public int parentId { get; set; }
         public List<category> childCategories { get; set; }
+        public int stockAmount { get; set; }
 
-        public category(int CategoryId, string CategoryName, int ParentId, List<category> ChildCategories)
+        public category(int CategoryId, string CategoryName, int ParentId, List<category> ChildCategories, int StockAmount)
         {
             categoryId = CategoryId;
             categoryName = CategoryName;
             parentId = ParentId;
             childCategories = ChildCategories;
+            stockAmount = StockAmount;
         }
 
         public int getParentID() => parentId;

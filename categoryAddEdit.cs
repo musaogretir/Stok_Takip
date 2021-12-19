@@ -58,7 +58,7 @@ namespace Stok_Takip
                 {
                     listBox1.Items.Add(c);
 
-                    category category = new category(Form1.categoryId, c, 0, new List<category>());
+                    category category = new category(Form1.categoryId, c, 0, new List<category>(),0);
 
                     Form1.categoryId++;
 
@@ -163,7 +163,8 @@ namespace Stok_Takip
                                                                             Form1.kategoriler[index].childCategories.Count, 
                                                                             k1,
                                                                             catID,
-                                                                            new List<category>()
+                                                                            new List<category>(),
+                                                                            0
                                                                            )
                                                              );
                 }
@@ -279,7 +280,7 @@ namespace Stok_Takip
                                     .childCategories
                                     .Add(
                                         new category(Form1.kategoriler[index]
-                                                          .childCategories.Count, k2, parentID, new List<category>())
+                                                          .childCategories.Count, k2, parentID, new List<category>(),0)
                                         );
                             }
                         }
@@ -412,7 +413,7 @@ namespace Stok_Takip
                                     .childCategories
                                     .Add(
                                         new category(Form1.kategoriler[index]
-                                        .childCategories.Count, k3, parentID, new List<category>())
+                                        .childCategories.Count, k3, parentID, new List<category>(),0)
                                         );
                             }
                         }

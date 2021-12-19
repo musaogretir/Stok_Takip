@@ -43,13 +43,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.sdSv4 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.sdSv3 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.sdSv2 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.sdSv1 = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -69,6 +69,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,6 +82,7 @@
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -131,6 +137,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Location = new System.Drawing.Point(1, 60);
@@ -145,20 +152,20 @@
             this.groupBox2.Controls.Add(this.panel6);
             this.groupBox2.Controls.Add(this.panel5);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.comboBox5);
+            this.groupBox2.Controls.Add(this.sdSv4);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.comboBox6);
+            this.groupBox2.Controls.Add(this.sdSv3);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.comboBox7);
+            this.groupBox2.Controls.Add(this.sdSv2);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.comboBox8);
+            this.groupBox2.Controls.Add(this.sdSv1);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(642, 15);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(682, 675);
+            this.groupBox2.Size = new System.Drawing.Size(682, 501);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " Stok Düzenle ";
@@ -170,6 +177,7 @@
             this.panel6.Controls.Add(this.maskedTextBox2);
             this.panel6.Controls.Add(this.label18);
             this.panel6.Controls.Add(this.label19);
+            this.panel6.Enabled = false;
             this.panel6.Location = new System.Drawing.Point(79, 207);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(459, 126);
@@ -183,6 +191,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Stok Düzelt";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // maskedTextBox2
             // 
@@ -252,14 +261,16 @@
             this.label13.TabIndex = 18;
             this.label13.Text = "Seviye 4 :";
             // 
-            // comboBox5
+            // sdSv4
             // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(161, 163);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(178, 27);
-            this.comboBox5.TabIndex = 17;
+            this.sdSv4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sdSv4.Enabled = false;
+            this.sdSv4.FormattingEnabled = true;
+            this.sdSv4.Location = new System.Drawing.Point(161, 163);
+            this.sdSv4.Name = "sdSv4";
+            this.sdSv4.Size = new System.Drawing.Size(178, 27);
+            this.sdSv4.TabIndex = 17;
+            this.sdSv4.SelectedIndexChanged += new System.EventHandler(this.sdSv4_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -272,14 +283,16 @@
             this.label14.TabIndex = 16;
             this.label14.Text = "Seviye 3 :";
             // 
-            // comboBox6
+            // sdSv3
             // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(161, 130);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(178, 27);
-            this.comboBox6.TabIndex = 15;
+            this.sdSv3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sdSv3.Enabled = false;
+            this.sdSv3.FormattingEnabled = true;
+            this.sdSv3.Location = new System.Drawing.Point(161, 130);
+            this.sdSv3.Name = "sdSv3";
+            this.sdSv3.Size = new System.Drawing.Size(178, 27);
+            this.sdSv3.TabIndex = 15;
+            this.sdSv3.SelectedIndexChanged += new System.EventHandler(this.sdSv3_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -292,14 +305,16 @@
             this.label15.TabIndex = 14;
             this.label15.Text = "Seviye 2 :";
             // 
-            // comboBox7
+            // sdSv2
             // 
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(161, 97);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(178, 27);
-            this.comboBox7.TabIndex = 13;
+            this.sdSv2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sdSv2.Enabled = false;
+            this.sdSv2.FormattingEnabled = true;
+            this.sdSv2.Location = new System.Drawing.Point(161, 97);
+            this.sdSv2.Name = "sdSv2";
+            this.sdSv2.Size = new System.Drawing.Size(178, 27);
+            this.sdSv2.TabIndex = 13;
+            this.sdSv2.SelectedIndexChanged += new System.EventHandler(this.sdSv2_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -312,14 +327,15 @@
             this.label16.TabIndex = 12;
             this.label16.Text = "Seviye 1 :";
             // 
-            // comboBox8
+            // sdSv1
             // 
-            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(161, 64);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(178, 27);
-            this.comboBox8.TabIndex = 11;
+            this.sdSv1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sdSv1.FormattingEnabled = true;
+            this.sdSv1.Location = new System.Drawing.Point(161, 64);
+            this.sdSv1.Name = "sdSv1";
+            this.sdSv1.Size = new System.Drawing.Size(178, 27);
+            this.sdSv1.TabIndex = 11;
+            this.sdSv1.SelectedIndexChanged += new System.EventHandler(this.sdSv1_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -351,7 +367,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(603, 675);
+            this.groupBox1.Size = new System.Drawing.Size(603, 501);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Stok Girişi ";
@@ -377,6 +393,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Stok Ekle";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // maskedTextBox1
             // 
@@ -533,6 +550,63 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Kategori Seçiniz :";
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Control;
+            this.panel7.Controls.Add(this.label23);
+            this.panel7.Controls.Add(this.label22);
+            this.panel7.Controls.Add(this.label21);
+            this.panel7.Controls.Add(this.label20);
+            this.panel7.Location = new System.Drawing.Point(18, 537);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1306, 125);
+            this.panel7.TabIndex = 2;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label23.Location = new System.Drawing.Point(736, 61);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(216, 25);
+            this.label23.TabIndex = 28;
+            this.label23.Text = "butonuna tıklamalısınız.";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Lime;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(532, 61);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(186, 25);
+            this.label22.TabIndex = 27;
+            this.label22.Text = "Değişiklikleri Kaydet";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label21.Location = new System.Drawing.Point(68, 61);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(458, 25);
+            this.label21.TabIndex = 26;
+            this.label21.Text = "Yapılan değişikliklerin diğer ekranlara yansıması için,";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(70, 19);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(79, 28);
+            this.label20.TabIndex = 25;
+            this.label20.Text = "Dikkat:";
+            // 
             // stockAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -561,6 +635,8 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -595,18 +671,23 @@
         private Label label11;
         private Label label12;
         private Label label13;
-        private ComboBox comboBox5;
+        private ComboBox sdSv4;
         private Label label14;
-        private ComboBox comboBox6;
+        private ComboBox sdSv3;
         private Label label15;
-        private ComboBox comboBox7;
+        private ComboBox sdSv2;
         private Label label16;
-        private ComboBox comboBox8;
+        private ComboBox sdSv1;
         private Label label17;
         private Panel panel6;
         private Button button2;
         private MaskedTextBox maskedTextBox2;
         private Label label18;
         private Label label19;
+        private Panel panel7;
+        private Label label23;
+        private Label label22;
+        private Label label21;
+        private Label label20;
     }
 }
